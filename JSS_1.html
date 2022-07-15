@@ -1,0 +1,123 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fill Form</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        //1st task
+        let myName = "Pavel";
+        let mysecName = "Maz";
+        let myDate = 1991;
+        let thisDate = 2022;
+
+        let myAge = thisDate - myDate;
+        console.log("Aš esu " + myName + " " + mysecName + ". Man yra " + myAge + " metų");
+
+        //2nd task
+        let oneNum = Math.floor(Math.random() * 5);
+        let twoNum = Math.floor(Math.random() * 5);
+
+        if (oneNum != 0 && twoNum != 0) {
+            if (oneNum > twoNum) {
+                console.log((oneNum / twoNum).toFixed(2));
+            } else {
+                console.log((twoNum / oneNum).toFixed(2));
+            }
+        }
+
+        //3rd task
+        let threeNum = Math.floor(Math.random() * 26);
+        let fourNum = Math.floor(Math.random() * 26);
+        let fiveNum = Math.floor(Math.random() * 26);
+
+        if (fourNum > threeNum > fiveNum || fourNum < threeNum < fiveNum) {
+            console.log(threeNum);
+        } if (threeNum > fourNum > fiveNum || threeNum < fourNum < fiveNum) {
+            console.log(fourNum);
+        } if (threeNum > fiveNum > fourNum || threeNum < fiveNum < fourNum) {
+            console.log(fiveNum);
+        } else {
+            console.log("Kai kurie skaičiai yra lygūs");
+        }
+
+        //4rd task
+        let aNum = Math.ceil(Math.random() * 10);
+        let bNum = Math.ceil(Math.random() * 10);
+        let cNum = Math.ceil(Math.random() * 10);
+
+        if ((aNum + bNum) > cNum) {
+            console.log("Trikampį sudaryti galima.");
+        } else {
+            console.log("Trikampio sudaryti negalima.");
+        }
+
+        if ((bNum + cNum) > aNum) {
+            console.log("Trikampį sudaryti galima.");
+        } else {
+            console.log("Trikampio sudaryti negalima.");
+        }
+
+        if ((cNum + aNum) > bNum) {
+            console.log("Trikampį sudaryti galima.");
+        } else {
+            console.log("Trikampio sudaryti negalima.");
+        }
+
+        //5th task
+        let dNum = Math.floor(Math.random() * 3);
+        let eNum = Math.floor(Math.random() * 3);
+        let fNum = Math.floor(Math.random() * 3);
+        let gNum = Math.floor(Math.random() * 3);
+
+        let zero = 0
+        let one = 0
+        let two = 0
+
+        if (dNum == 0) {
+            zero++;
+        } else if (dNum == 1) {
+            one++;
+        } else {
+            two++;
+        }
+        if (eNum == 0) {
+            zero++;
+        } else if (eNum == 1) {
+            one++;
+        } else {
+            two++;
+        }
+        if (fNum == 0) {
+            zero++;
+        } else if (fNum == 1) {
+            one++;
+        } else {
+            two++;
+        }
+        if (gNum == 0) {
+            zero++;
+        } else if (gNum == 1) {
+            one++;
+        } else {
+            two++;
+        }
+
+        console.log("Iš viso nulių yra - " + zero);
+        console.log("Iš viso vienetų yra - " + one);
+        console.log("Iš viso dvejetų yra - " + two);
+
+    </script>
+
+</body>
+
+</html>
