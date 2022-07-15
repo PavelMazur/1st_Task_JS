@@ -14,6 +14,8 @@
 
     <script>
 
+
+
         //1st task
         let myName = "Pavel";
         let mysecName = "Maz";
@@ -115,6 +117,73 @@
         console.log("Iš viso nulių yra - " + zero);
         console.log("Iš viso vienetų yra - " + one);
         console.log("Iš viso dvejetų yra - " + two);
+
+        //6th task
+        let ab = Math.floor((Math.random() * 21) -10); // -10 to 10
+        if (ab < 0){
+            console.log("[" + ab + "]");
+        } else if (ab = 0){
+            console.log("(" + ab + ")");
+        } else {
+            console.log("{" + ab + "}");
+        }
+
+        //7th task
+      
+        let tQuantity = Math.floor((Math.random() * 3000) + 5)
+        let totalPrice = tQuantity;
+
+        if (tQuantity > 2000){
+            totalPrice = tQuantity * 0.96;
+        } else if (tQuantity <= 2000 && tQuantity > 1000){
+            totalPrice = tQuantity * 0.97;
+        } else {
+            totalPrice = tQuantity;
+        }
+           
+
+        // console.log(tQuantity);
+        console.log("Nupirkta žvakių -  " + tQuantity + ". Jų bendra suma -  " + Math.round(totalPrice) + " eurų");
+
+        //8th task
+       /* Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100  (sveiki skaičiai). 
+        Paskaičiuokite jų aritmetinį vidurkį. 
+        Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. 
+        Abu vidurkius atspausdinkite. 
+        Rezultatus apvalinkite iki sveiko skaičiaus.*/
+
+        let avgA = Math.floor((Math.random() * 100)); Math.round
+        let avgB = Math.floor((Math.random() * 100));
+        let avgC = Math.floor((Math.random() * 100));
+       
+        let avgAllOne = (avgA + avgB + avgC) / 3;        
+        let avgAllTwo = avgAllOne;
+
+        if (avgA < 10 || avgA > 90){
+            avgAllTwo = avgAllOne - avgA;
+        } else {
+            avgAllTwo = avgAllOne;
+        }
+
+        if (avgB < 10 || avgB > 90){
+            avgAllTwo = avgAllTwo - avgB;
+        } else {
+            avgAllTwo = avgAllTwo;
+        }
+
+        if (avgC < 10 || avgC > 90){
+            avgAllTwo = avgAllTwo - avgC;
+        } else {
+            avgAllTwo = avgAllTwo;
+        }
+
+
+        // console.log(avgA, avgB, avgC);
+        console.log("Suapvalintas aritmetinis vidurkis -  " + Math.round(avgAllOne) + ". Suapvalintas aritmetinis vidurkis atmetus skaičius -  " + Math.round(avgAllTwo) + ".");
+
+
+
+
 
     </script>
 
