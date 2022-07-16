@@ -187,10 +187,18 @@
         let hour = Math.floor(Math.random() * 24);
         let min = Math.floor(Math.random() * 60);
         let sec = Math.floor(Math.random() * 60);
-          
-        let addSec = Math.floor(Math.random() * 301); // random + sec
-       
-        //convert Old Time to "00" format:
+
+        let addSec = Math.floor(Math.random() * 301);
+        
+        //for selfcheck//
+
+        /*let hour = 23;
+        let min = 59;
+        let sec = 59; 
+        let addSec = 121; */  
+        
+
+        //convert Old Time to "00" format//
         let convertedHour = hour;
         let convertedMin = min;
         let convertedSec = sec;
@@ -200,48 +208,63 @@
         } else {
             convertedHour = hour;
         }
+        
         if(min < 10){
             convertedMin = "0" + min;
         } else {
             convertedMin = min;
         }
+        
         if(sec < 10) {
             convertedSec = "0" + sec;
         } else {
             convertedSec = sec;
         }
 
-        //Adding min + sec
+        //Adding min + sec//
+
         let newSec = sec;
         let newMin = min;
 
         if (addSec > 299){
-            newSec = (addSec + sec) % 60, newMin = min + 5;
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60);
         } else if (addSec > 239 && addSec < 300){
-            newSec = (addSec + sec) % 60, newMin = min + 4;
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60);
         } else if (addSec > 179 && addSec < 240){
-            newSec = (addSec + sec) % 60, newMin = min + 3;
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60);
         } else if (addSec > 119 && addSec < 180){
-            newSec = (addSec + sec) % 60, newMin = min + 2;
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60); //3
         } else if (addSec > 59 && addSec < 120){
-            newSec = (addSec + sec) % 60, newMin = min + 1;
-        } else if (addSec < 60 && addSec + sec >= 60) {
-            newSec = (addSec + sec) % 60, newMin = min + 1; 
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60);
+        } else if (addSec < 60 && (addSec + sec) >= 60) {
+            newSec = (addSec + sec) % 60, newMin = min + Math.floor((addSec + sec) / 60); 
          } else {
             newSec = addSec + sec, newMin = min;
          }
 
-       //checkpoint:
-        // console.log("sec " + sec, "additional sec " + addSec); 
-        //console.log(newSec);
-       // console.log(newMin);
-
+        //Old bad:
+        // if (addSec > 299){ 
+        //     newSec = (addSec + sec) % 60, newMin = min + 5;
+        // } else if (addSec > 239 && addSec < 300){
+        //     newSec = (addSec + sec) % 60, newMin = min + 4;
+        // } else if (addSec > 179 && addSec < 240){
+        //     newSec = (addSec + sec) % 60, newMin = min + 3;
+        // } else if (addSec > 119 && addSec < 180){
+        //     newSec = (addSec + sec) % 60, newMin = min + 2; //3
+        // } else if (addSec > 59 && addSec < 120){
+        //     newSec = (addSec + sec) % 60, newMin = min + 1;
+        // } else if (addSec < 60 && (addSec + sec) >= 60) {
+        //     newSec = (addSec + sec) % 60, newMin = min + 1; 
+        //  } else {
+        //     newSec = addSec + sec, newMin = min;
+        //  }
        
+        // +1 hour if newMin > 60 //
         let veryNewMin = newMin;
         let newHour = hour;
 
         if (newMin >= 60){
-            newHour = hour + 1, veryNewMin = newMin % 60;
+            newHour = hour + 1, veryNewMin = newMin % 60; 
         } else {
             newHour = hour, veryNewMin = newMin;
         }
@@ -254,11 +277,11 @@
         }
 
 
-        //convert New Time to 00 format
+        //convert New Time to 00 format //
         let convertedNewHour = veryNewHour;
         let onvertedNewMin = veryNewHour;
         let onvertedNewSec = veryNewHour;
-
+              
         if(veryNewHour < 10){
             convertedNewHour = "0" + veryNewHour;
         } else {
@@ -274,13 +297,11 @@
         } else {
             convertedNewSec = newSec;
         }
-
-
-
-        console.log("Laikas dabar: " + convertedHour + ":" + convertedMin + ":" + convertedSec); // timeNow
-     
         
-        if (hour > 23 && veryNewHour < 1){
+        // PRINT //
+        console.log("Laikas dabar: " + convertedHour + ":" + convertedMin + ":" + convertedSec); // timeNow
+        
+        if (hour > 22 && veryNewHour < 1){
             console.log("Laikas už " + addSec + " sekundžių: Sekančios dienos " + convertedNewHour + ":" + convertedNewMin + ":" + convertedNewSec);
         } else {
             console.log("Laikas už " + addSec + " sekundžių: " + convertedNewHour + ":" + convertedNewMin + ":" + convertedNewSec);
