@@ -213,8 +213,7 @@
         // console.log(tQuantity);
         console.log("Nupirkta žvakių - " + tQuantity + " vnt." + " Jų bendra suma - " + Math.round(totalPrice) + " eurų");
 
-        //8th task // 
-        //--------------------perdaryti----------------//
+        //-------------------8th task----------------------// 
        /* Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100  (sveiki skaičiai). 
         Paskaičiuokite jų aritmetinį vidurkį. 
         Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. 
@@ -224,6 +223,9 @@
         let avgA = Math.floor((Math.random() * 100));
         let avgB = Math.floor((Math.random() * 100));
         let avgC = Math.floor((Math.random() * 100));
+
+        // let avgA = 95;
+        // let avgB = 5;
        
 
         console.log(avgA, avgB, avgC); // self-check //
@@ -234,29 +236,44 @@
         if (avgA < 10 || avgA > 90)
         {
             avgAllTwo = (avgB + avgC) / 2;
+            if (avgB < 10 || avgB > 90)
+            {
+                avgAllTwo = avgC;
+            }
+            else
+            {
+                avgAllTwo = (avgB + avgC) / 2;
+            }
         } 
-        else 
-        {
-            avgAllTwo = avgAllOne;
-        }
-
-        if (avgB < 10 || avgB > 90)
+        else if (avgB < 10 || avgB > 90)
         {
             avgAllTwo = (avgA + avgC) / 2;
+            if (avgA < 10 || avgA > 90)
+            {
+                avgAllTwo = avgC;
+            }
+            else
+            {
+                avgAllTwo = (avgA + avgC) / 2;
+            }
+        }
+        else if (avgC < 10 || avgC > 90)
+        {
+            avgAllTwo = (avgA + avgB) / 2;
+            if (avgA < 10 || avgA > 90)
+            {
+                avgAllTwo = avgB;
+            }
+            else
+            {
+                avgAllTwo = (avgA + avgB) / 2;
+            }
         } 
         else 
         {
             avgAllTwo = avgAllOne;
         }
 
-        if (avgC < 10 || avgC > 90)
-        {
-            avgAllTwo = (avgB + avgB) / 2;
-        } 
-        else 
-        {
-            avgAllTwo = avgAllOne;
-        }
 
 
         // console.log(avgA, avgB, avgC);
@@ -265,7 +282,7 @@
 
 
 
-        //9th task
+        //----------------------9th task----------------------------//
 
         let hour = Math.floor(Math.random() * 24);
         let min = Math.floor(Math.random() * 60);
