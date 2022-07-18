@@ -24,71 +24,60 @@
         console.log("Aš esu " + myName + " " + mysecName + ". Man yra " + myAge + " metų");
 
         //2nd task
-        let oneNum = Math.floor(Math.random() * 5);
-        let twoNum = Math.floor(Math.random() * 5);
+        let oneNum = Math.round(Math.random() * 4);
+        let twoNum = Math.round(Math.random() * 4);
 
-        if (oneNum != 0 && twoNum != 0) 
+        if (oneNum > twoNum) 
         {
-            if (oneNum > twoNum) 
-            {
-                console.log((oneNum / twoNum).toFixed(2));
-            } 
-            else 
-            {
-                console.log((twoNum / oneNum).toFixed(2));
-            }
+            console.log((oneNum / twoNum).toFixed(2));
+        } 
+        else (oneNum < twoNum)
+        {
+            console.log((twoNum / oneNum).toFixed(2));
         }
+       
 
         //3rd task
-        let threeNum = Math.floor(Math.random() * 26);
-        let fourNum = Math.floor(Math.random() * 26);
-        let fiveNum = Math.floor(Math.random() * 26);
+        let threeNum = Math.round(Math.random() * 25);
+        let fourNum = Math.round(Math.random() * 25);
+        let fiveNum = Math.round(Math.random() * 25);
 
-        if (fourNum > threeNum > fiveNum || fourNum < threeNum < fiveNum) 
+        console.log("Random skaičiai: " + threeNum, fourNum, fiveNum);// self-check
+        console.log("Vidurinis skaičius: iš: " + threeNum, fourNum, fiveNum + " lygus: "); 
+        if (threeNum == fourNum || threeNum == fiveNum || fourNum == fiveNum)
+        {
+            console.log("No average number found");
+        }
+        else if (threeNum > fourNum && threeNum < fiveNum || threeNum < fourNum && threeNum > fiveNum) 
         {
             console.log(threeNum);
         } 
-        if (threeNum > fourNum > fiveNum || threeNum < fourNum < fiveNum) 
+        else if (fourNum > threeNum && fourNum < fiveNum || fourNum < threeNum && fourNum > fiveNum) 
         {
             console.log(fourNum);
         } 
-        if (threeNum > fiveNum > fourNum || threeNum < fiveNum < fourNum) 
+        else if (fiveNum > fourNum && fiveNum < threeNum || fiveNum < fourNum && fiveNum > threeNum) 
         {
             console.log(fiveNum);
         } 
-        else 
-        {
-            console.log("Kai kurie skaičiai yra lygūs");
-        }
+
 
         //4rd task
-        let aNum = Math.ceil(Math.random() * 10);
-        let bNum = Math.ceil(Math.random() * 10);
-        let cNum = Math.ceil(Math.random() * 10);
+        let aNum = Math.floor((Math.random() * 10) + 1);
+        let bNum = Math.floor((Math.random() * 10) + 1);
+        let cNum = Math.floor((Math.random() * 10) + 1);
 
-        if ((aNum + bNum) > cNum) 
+        console.log("Trikampio kraštinės: " + aNum, bNum, cNum);
+
+        if ((aNum + bNum) > cNum && (bNum + cNum) > aNum && (cNum + aNum) > bNum) 
         {
             console.log("Trikampį sudaryti galima.");
         } 
-        else 
+        else if (aNum == bNum == cNum)
         {
             console.log("Trikampio sudaryti negalima.");
         }
-
-        if ((bNum + cNum) > aNum) 
-        {
-            console.log("Trikampį sudaryti galima.");
-        } 
-        else 
-        {
-            console.log("Trikampio sudaryti negalima.");
-        }
-
-        if ((cNum + aNum) > bNum) 
-        {
-            console.log("Trikampį sudaryti galima.");
-        } 
-        else 
+        else
         {
             console.log("Trikampio sudaryti negalima.");
         }
@@ -155,17 +144,15 @@
             two++;
         }
 
-        console.log("Iš viso nulių yra - " + zero);
-        console.log("Iš viso vienetų yra - " + one);
-        console.log("Iš viso dvejetų yra - " + two);
+        console.log("Iš viso nulių yra - " + zero + ". Iš viso vienetų yra - " + one + ". Iš viso dvejetų yra - " + two);
 
         //6th task
-        let ab = Math.floor((Math.random() * 21) -10); // -10 to 10
+        let ab = Math.round((Math.random() * 20) - 10); // -10 to 10
         if (ab < 0)
         {
             console.log("[" + ab + "]");
         } 
-        else if (ab = 0)
+        else if (ab == 0)
         {
             console.log("(" + ab + ")");
         } 
@@ -173,6 +160,36 @@
         {
             console.log("{" + ab + "}");
         }
+
+        ab = Math.round((Math.random() * 20) - 10); // -10 to 10
+        if (ab < 0)
+        {
+            console.log("[" + ab + "]");
+        } 
+        else if (ab == 0)
+        {
+            console.log("(" + ab + ")");
+        } 
+        else 
+        {
+            console.log("{" + ab + "}");
+        }
+
+
+        ab = Math.round((Math.random() * 20) - 10); // -10 to 10
+        if (ab < 0)
+        {
+            console.log("[" + ab + "]");
+        } 
+        else if (ab == 0)
+        {
+            console.log("(" + ab + ")");
+        } 
+        else 
+        {
+            console.log("{" + ab + "}");
+        }
+
 
         //7th task
       
@@ -194,9 +211,10 @@
            
 
         // console.log(tQuantity);
-        console.log("Nupirkta žvakių -  " + tQuantity + ". Jų bendra suma -  " + Math.round(totalPrice) + " eurų");
+        console.log("Nupirkta žvakių - " + tQuantity + " vnt." + " Jų bendra suma - " + Math.round(totalPrice) + " eurų");
 
-        //8th task
+        //8th task // 
+        //--------------------perdaryti----------------//
        /* Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100  (sveiki skaičiai). 
         Paskaičiuokite jų aritmetinį vidurkį. 
         Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. 
@@ -207,12 +225,15 @@
         let avgB = Math.floor((Math.random() * 100));
         let avgC = Math.floor((Math.random() * 100));
        
+
+        console.log(avgA, avgB, avgC); // self-check //
+
         let avgAllOne = (avgA + avgB + avgC) / 3;        
-        let avgAllTwo = avgAllOne;
+        let avgAllTwo = 0;
 
         if (avgA < 10 || avgA > 90)
         {
-            avgAllTwo = avgAllOne - avgA;
+            avgAllTwo = (avgB + avgC) / 2;
         } 
         else 
         {
@@ -221,20 +242,20 @@
 
         if (avgB < 10 || avgB > 90)
         {
-            avgAllTwo = avgAllTwo - avgB;
+            avgAllTwo = (avgA + avgC) / 2;
         } 
         else 
         {
-            avgAllTwo = avgAllTwo;
+            avgAllTwo = avgAllOne;
         }
 
         if (avgC < 10 || avgC > 90)
         {
-            avgAllTwo = avgAllTwo - avgC;
+            avgAllTwo = (avgB + avgB) / 2;
         } 
         else 
         {
-            avgAllTwo = avgAllTwo;
+            avgAllTwo = avgAllOne;
         }
 
 
@@ -254,10 +275,10 @@
         
         //for selfcheck//
 
-        /*let hour = 23;
-        let min = 59;
-        let sec = 59; 
-        let addSec = 121; */  
+        // let hour = 23;
+        // let min = 59;
+        // let sec = 59; 
+        // let addSec = 121; 
         
 
         //convert Old Time to "00" format//
@@ -412,13 +433,7 @@
         let e = Math.floor((Math.random() * 9001) + 1000);
         let f = Math.floor((Math.random() * 9001) + 1000);
         
-        console.log("a " + a);
-        console.log("b " + b);
-        console.log("c " + c);
-        console.log("d " + d);
-        console.log("e " + e);
-        console.log("f " + f);
-
+        console.log("a " + a + ". b - " + b + ". c - " + c + " . d - " + d + ". e - " + e + ". f - " + f);
         
         let firstInArray = 0;
         let secondInArray = 0;
